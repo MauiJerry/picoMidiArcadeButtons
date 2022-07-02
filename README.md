@@ -32,4 +32,4 @@ Currently the two primary examples only have one arcade_qt defined at the defaul
 
 When adding boards, you must also extend midi_notes[] so there are the proper number for your setup.  The 5x4.py version exends this array to 20 notes.
 
-Although up to 16 of the StemmaQT boards are possible, the code currently only defines midi notes for 16 (or 20) buttons.  If you want more buttons, extend the array.
+The "code_MidiQT_bankSwitch.py" version drops back to 16 midi buttons, with the 5th (default address) board being used as a "bank switch" - it changes the midi notes associated with the midi buttons.  4 arrays are used to hold the Banks, and pressing one of the BankSwitches,  changes which bank is active.
