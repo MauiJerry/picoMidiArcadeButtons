@@ -17,10 +17,12 @@ The i2c board (https://www.adafruit.com/product/5296) makes it MUCH easier to bu
 
 The Adafruit code examples are written to support multiple boards. Some use board.i2c others use busio.I2C. Neither example mentions the rPi Pico.  The Pico uses busio.  I eliminated the board.i2c to reduce confusion.
 
-There are four python files in top level, but really code.py is a copy of one of others. CircuitPython will execute code.py when the pico is booted.  Two versions of code are:
+There are five python files in top level, but really code.py is a copy of one of others. CircuitPython will execute code.py when the pico is booted.  Two versions of code are:
  * code_QTMidi_digLED.py: uses simple on/off digital leds
  * code_QTMidi_pwmLED.py: uses pwm leds for fadeIn fadeOut effects
  * code_QTMidi_5x4.py: pwm version supporting 5 1x4 boards for 20 total buttons
+ * code_MidiQT_bankSwitch.py: one of 5 boards is used to Bank Switch the other 4 (16) midi buttons
+ 
 copy desired version to code.py
 
 note the program uses print statements sent to USB.
