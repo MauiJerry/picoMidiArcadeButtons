@@ -40,8 +40,8 @@ print("i2c initialized")
 
 # Now instantiate N of the Seesaw board instances
 # each needs its own i2c address based on which jumpers are cut
-# TODO: fill in correct addresses for 4 available addr
-seeSawAddr = [0x3A, 0x3B, 0x3C, 0x3E, 0x42]  # only 4 for now: , 0x3A, 0x3A, 0x3A)
+# 5x4 addresses: no cut, A0 cut, A1 cut, A2 cut, A3 cut
+seeSawAddr = [0x3A, 0x3B, 0x3C, 0x3E, 0x42]  
 
 # each ArcadeQT board hold supports 4 led/buttons
 # these could be pwm or digital. pwm could be blocking or async efx
