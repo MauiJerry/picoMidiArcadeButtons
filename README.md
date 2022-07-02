@@ -17,14 +17,19 @@ The i2c board (https://www.adafruit.com/product/5296) makes it MUCH easier to bu
 
 The Adafruit code examples are written to support multiple boards. Some use board.i2c others use busio.I2C. Neither example mentions the rPi Pico.  The Pico uses busio.  I eliminated the board.i2c to reduce confusion.
 
-There are three python files in top level, but really code.py is a copy of one of others. CircuitPython will execute code.py when the pico is booted.  Two versions of code are:
+There are four python files in top level, but really code.py is a copy of one of others. CircuitPython will execute code.py when the pico is booted.  Two versions of code are:
  * code_QTMidi_digLED.py: uses simple on/off digital leds
  * code_QTMidi_pwmLED.py: uses pwm leds for fadeIn fadeOut effects
+ * code_QTMidi_5x4.py: pwm version supporting 5 1x4 boards for 20 total buttons
 copy desired version to code.py
 
 note the program uses print statements sent to USB.
 this should not affect midi devices but is useful for debugging
 especially using the Mu editor
 
-Currently the code only has one arcade_qt defined at the default address (0x3A). Adding more should be trivial once you cut the traces and know their address.  
-Although up to 16 of the StemmaQT boards are possible, the code currently only defines midi notes for 16 buttons.  If you want more buttons, extend the array.
+Currently the two primary examples only have one arcade_qt defined at the default address (0x3A). The 5x4.py version adds four more boards. See  "https://learn.adafruit.com/adafruit-led-arcade-button-qt" section "Addres Jumpers" (under Pinout section) for the addresses.  Insert these in:
+   seeSawAddr = [0x3A, 0x3B, 0x3C, 0x3E, 0x42]  
+
+When adding boards, you must also extend midi_notes[] so there are the proper number for your setup.  The 5x4.py version exends this array to 20 notes.
+
+Although up to 16 of the StemmaQT boards are possible, the code currently only defines midi notes for 16 (or 20) buttons.  If you want more buttons, extend the array.
