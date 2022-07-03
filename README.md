@@ -21,7 +21,7 @@ There are five python files in top level, but really code.py is a copy of one of
  * code_QTMidi_digLED.py: uses simple on/off digital leds
  * code_QTMidi_pwmLED.py: uses pwm leds for fadeIn fadeOut effects
  * code_QTMidi_5x4.py: pwm version supporting 5 1x4 boards for 20 total buttons
- * code_MidiQT_bankSwitch.py: one of 5 boards is used to Bank Switch the other 4 (16) midi buttons
+ * code_QTMidi_bankSwitch.py: one of 5 boards is used to Bank Switch the other 4 (16) midi buttons
  
 copy desired version to code.py
 
